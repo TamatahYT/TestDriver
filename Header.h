@@ -1,0 +1,13 @@
+#pragma once
+struct USERINPUT {
+	ULONG procID;
+};
+struct USEROUTPUT {
+	HANDLE procHandle;
+};
+struct ThreadData {
+	ULONG ThreadID;
+	int priority;
+};
+#define IOCTL_OPEN_PROCESS CTL_CODE(0x8000, 0x800, METHOD_NEITHER, FILE_ANY_ACCESS)
+#define IOCTL_BOOSTER_THREAD CTL_CODE(0x8000, 0x900, METHOD_BUFFERED, FILE_ANY_ACCESS)
